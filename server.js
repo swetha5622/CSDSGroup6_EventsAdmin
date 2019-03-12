@@ -22,7 +22,6 @@ let dbConnSuccess = function() {
 
     // set up Pug - html templating engine 
     app.set('view engine', 'pug');
-    //app.set('views', path.join(__dirname, 'views'));
     app.locals.basedir = app.get('views');
 
     // set up BodyParser
