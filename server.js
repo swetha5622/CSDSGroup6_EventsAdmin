@@ -2,7 +2,7 @@
 /**
  * CSDS Events Admin
  * 
- * @author Group 6 2019
+ * @author Swetha Srinivasan
  * 
  */
 // =============================================
