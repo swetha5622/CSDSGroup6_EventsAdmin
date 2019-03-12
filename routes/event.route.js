@@ -3,8 +3,11 @@ const router = express.Router();
 
 const event_controller = require('../controllers/event.controller');
 
-// a simple test url to check that all of our files are communicating correctly.
+// GET Requests
 router.get('/test', event_controller.test);
-router.get('/newtest', event_controller.newtest);
+router.get('/createevent', event_controller.renderCreateEventForm);
+
+// POST Requests
+router.post('/create', event_controller.createNewEvent);
 
 module.exports = router;

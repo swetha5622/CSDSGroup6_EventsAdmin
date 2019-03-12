@@ -1,6 +1,11 @@
-//https://stackoverflow.com/questions/38012797/google-app-engine-502-bad-gateway-with-nodejs
-
-
+// =============================================
+/**
+ * CSDS Events Admin
+ * 
+ * @author Group 6 2019
+ * 
+ */
+// =============================================
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -17,6 +22,8 @@ let dbConnSuccess = function() {
 
     // set up Pug - html templating engine 
     app.set('view engine', 'pug');
+    //app.set('views', path.join(__dirname, 'views'));
+    app.locals.basedir = app.get('views');
 
     // set up BodyParser
     app.use(bodyParser.json());
@@ -27,7 +34,7 @@ let dbConnSuccess = function() {
     app.get('/', (req, res) => {
         res
             .status(200)
-            .send('Hello, world!')
+            .send('Hello from the CSDS Events Admin application!  Courtesy of Group 6 2019...')
             .end();
         });
     
@@ -46,16 +53,13 @@ const pass = nconf.get('mongoPass');
 const host = nconf.get('mongoHost');
 const port = nconf.get('mongoPort');
 
-// let dev_db_url = `mongodb+srv://${user}:${pass}@${host}:${port}`;
 let dev_db_url = `mongodb+srv://${user}:${pass}@${host}`;
 if (nconf.get('mongoDatabase')) {
     dev_db_url = `${dev_db_url}/${nconf.get('mongoDatabase')}?retryWrites=true`;
 }
 console.log(dev_db_url);
 
-// const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(dev_db_url, { useNewUrlParser: true });
-// mongoose.connect(nconf.get('mongoConn'))
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 

@@ -1,0 +1,33 @@
+csdsevents group6
+csdsgroup6.2019@gmail.com
+csds123#
+
+
+mongodb admin
+csdsgroup6admin
+csds1234
+
+csdsgroup6master
+csds1234
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://csdsgroup6master:csds1234@csdsgroup62019-d8r0p.gcp.mongodb.net/csdsgroup6db?retryWrites=true";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+var uri = "mongodb://csdsgroup6admin:<password>@csdsgroup62019-shard-00-00-d8r0p.gcp.mongodb.net:27017,csdsgroup62019-shard-00-01-d8r0p.gcp.mongodb.net:27017,csdsgroup62019-shard-00-02-d8r0p.gcp.mongodb.net:27017/test?ssl=true&replicaSet=csdsgroup62019-shard-0&authSource=admin&retryWrites=true";
+
+
+GCP project name 
+csdsgroup6eventsadmin
+
+https://github.com/swetha5622/CSDSGroup6_EventsAdmin.git
+
+//https://stackoverflow.com/questions/38012797/google-app-engine-502-bad-gateway-with-nodejs
+

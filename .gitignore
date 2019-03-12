@@ -65,3 +65,6 @@ keys.json
 
 # vs code dir
 .vscode
+
+# my metadata
+csds_app_data.txt

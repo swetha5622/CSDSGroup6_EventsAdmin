@@ -1,0 +1,78 @@
+extends base.pug
+block content
+    form.myForm(method='post', enctype='application/x-www-form-urlencoded', action='/csdsevents/create')
+        h2 Create a new CSDS Event
+        p
+            label
+                | Event Title
+                input(type='text', name='title', maxlength='100', required='')
+        p
+            label
+                | Event Description
+                textarea(name='description', maxlength='500')
+        p
+            label
+                | Event Location
+                input(type='text', name='location', maxlength='200', required='')
+        p
+            label
+                | Event Organizer
+                input(type='text', name='organizername', maxlength='100', required='')
+        p
+            label
+                | Event Organizer Email 
+                input(type='email', name='organizeremail')
+        p
+            label
+                | Start Date/Time
+                input(type='datetime-local', name='startdate', required='')
+        p
+            label
+                | End Date/Time
+                input(type='datetime-local', name='enddate')
+        p
+            label
+                | Maximum Attendees Count Allowed
+                input(type='number', name='maxattendees' min=1)
+        p
+            label
+                | Is full day event
+                input(type='checkbox', name='isfulldayevent')
+        p
+            label
+                | Is recurring event
+                input(type='checkbox', name='isrecurring')
+        p
+            label
+                | Event recurrence type
+                select#recurring_type(name='recurring_type')
+                    option(value='daily') Daily
+                    option(value='weekly') Weekly
+                    option(value='monthly') Monthly
+                    option(value='yearly') Yearly
+        p
+            label
+                | Event recurrence maximum count
+                input(type='number', name='max_num_occurences' min=1)
+        p
+            label
+                | Event recurrence separation count
+                input(type='number', name='separation_count' min=0)
+        p
+            label
+                | Event day of the week
+                input(type='number', name='day_of_week' min=1 max=7)
+        p
+            label
+                | Event week of the month
+                input(type='number', name='week_of_month' min=1 max=5)
+        p
+            label
+                | Event day of the month
+                input(type='number', name='day_of_month' min=1 max=31)
+        p
+            label
+                | Event month of the year
+                input(type='number', name='month_of_year' min=1 max=12)
+        p
+            button Create New Event
