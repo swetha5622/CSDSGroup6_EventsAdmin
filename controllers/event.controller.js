@@ -26,15 +26,20 @@ exports.test = function (req, res) {
  * and if the event is recurring, removes the 
  * entry from the recurring pattern table as well.
  */
-// exports.deleteEvent = function(req, res) {
-//     Event.findByIdAndRemove(
-//         req.params.id,
-//         function(err) {
-//             if (err) return next(err);
-//             res.send('Event deleted successfully');
-//         }
-//     );
-// };
+exports.deleteEvent = function(req, res) {
+    RecurringPattern.findOneAndRemove(
+        { event_id: req.params.id },
+        function(err) {
+            if (err) return next(err);
+        });
+    Event.findByIdAndRemove(
+        req.params.id,
+        function(err) {
+            if (err) return next(err);
+            res.send('Event deleted successfully');
+        }
+    );
+};
 
 /**
  * List all events.

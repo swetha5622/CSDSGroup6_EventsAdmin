@@ -12,6 +12,6 @@ router.get('/listevents', event_controller.listEvents);
 router.post('/create', event_controller.createNewEvent);
 
 // DELETE Requests
-// router.delete('/:id/delete', event_controller.deleteEvent);
+router.delete('/:id/delete', event_controller.deleteEvent);
 
 module.exports = router;
