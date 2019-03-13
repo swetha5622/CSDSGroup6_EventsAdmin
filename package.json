@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^2.4.2",
+    "@sendgrid/mail": "^6.3.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.18",
     "nconf": "^0.10.0",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "sendgrid": "^5.2.3"
   },
   "cloud-repo-tools": {
     "test": {

@@ -12,7 +12,7 @@ let CSDSEventSchema = new Schema({
     isfulldayevent: { type: Boolean, default: false },
     isrecurring: { type: Boolean, default: false },
     organizername: { type: String, required: true, max: 100 },
-    organizeremail: { type: String, required: true, max: 100 },
+    organizeremail: { type: String, required: true },
     maxattendees: { type: Number }
 });
 
