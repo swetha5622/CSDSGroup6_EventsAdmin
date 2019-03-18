@@ -1,0 +1,106 @@
+//- CSDS Special Program/Event Contract
+extends base.pug
+block content
+    form.myForm(method='post', enctype='application/x-www-form-urlencoded', action='/csdsevents/createspecialeventrequest')
+        h2 CSDS Special Program/Event Contract
+
+        p
+            label
+                | Requester Name *
+                input(type='text', name='reqname', maxlength='500', required='')
+        p
+            label
+                | Organization/Group Name *
+                input(type='text', name='orgname', maxlength='500', required='')
+        p
+            label
+                | Email *
+                input(type='email', name='reqmail', required='')
+        p
+            label
+                | Cell Phone *
+                input(type='tel', name='reqphone', required='')
+        p
+            label
+                | CSDS Staff Contact Name *
+                input(type='text', name='csdsstaffname', maxlength='500', required='')
+        p
+            label
+                | CSDS Staff Contact Email *
+                input(type='text', name='csdsstaffmail', maxlength='500', required='')
+
+        p
+            label
+                | Program/Event Title *
+                input(type='text', name='eventtitle', maxlength='500', required='')
+        p
+            label
+                | Program/Event Description *
+                textarea(name='eventdescription', maxlength='1000', required='')
+        p
+            label
+                | Top 4 Preferred Dates and Times *
+        p
+            label
+                | (Include set-up, tear-down, and clean-up time)
+        p
+            label
+                | Desired time slot #1 *  
+                input(type='date', name='time_one_date', required='' title="Event date")
+                input(type='time', name='time_one_start', required='' title="Start")
+                input(type='time', name='time_one_end', required='' title="End")
+        p
+            label
+                | Desired time slot #2 *  
+                input(type='date', name='time_two_date', required='' title="Event date")
+                input(type='time', name='time_two_start', required='' title="Start")
+                input(type='time', name='time_two_end', required='' title="End")
+        p
+            label
+                | Desired time slot #3 *  
+                input(type='date', name='time_three_date', required='' title="Event date")
+                input(type='time', name='time_three_start', required='' title="Start")
+                input(type='time', name='time_three_end', required='' title="End")
+        p
+            label
+                | Desired time slot #4 *  
+                input(type='date', name='time_four_date', required='' title="Event date")
+                input(type='time', name='time_four_start', required='' title="Start")
+                input(type='time', name='time_four_end', required='' title="End")
+        p
+            label
+                | Spaces to be reserved *
+                select#recurring_type(name='spacename')
+                    option(value='sacred_space') Sacred Space
+                    option(value='reflection_room') Reflection Room
+                    option(value='office_lounge') Office Lounge
+                //- input(type='text', name='spacename', maxlength='500', required='')
+        p
+            label
+                | Maximum number of attendees expected *
+                input(type='number', name='max_attendees', required='' min=1 max=120)
+        fieldset
+        legend Is the event open to Northeastern Community *
+        p
+          label.choice
+            input(type='radio', name='open_ne_community', required='', value='yes')
+            |  Yes
+        p
+          label.choice
+            input(type='radio', name='open_ne_community', required='', value='no')
+            |  No
+        p
+          label.choice
+            input(type='radio', name='open_ne_community', required='', value='other')
+            |  Other
+        p
+            label
+                | Co-Organizing / Co-Sponsoring groups *
+                textarea(name='coorg_groups', maxlength='1000', required='')
+        p
+            label
+                | Comments
+                textarea(name='comments', maxlength='1000')
+        p
+            button Create New Event Request
+        

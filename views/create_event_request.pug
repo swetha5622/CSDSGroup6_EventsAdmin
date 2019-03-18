@@ -1,0 +1,85 @@
+//- CSDS Space Request Form and Contract
+extends base.pug
+block content
+    form.myForm(method='post', enctype='application/x-www-form-urlencoded', action='/csdsevents/createeventrequest')
+        h2 CSDS Space Request Form and Contract
+        h4 Thank you for filling out this survey so that we can accommodate space needs as much as we can in advance! Enjoy the remaining days of summer :)
+
+        p
+            label
+                | Name
+                input(type='text', name='name', maxlength='500', required='')
+        p
+            label
+                | Email 
+                input(type='email', name='email', required='')
+        p
+            label
+                | Cell Phone 
+                input(type='tel', name='cellphone', required='')
+        p
+            label
+                | CSDS Affiliation
+                input(type='text', name='csdsaffiliation', maxlength='500', required='')
+        p
+            label
+                | Group you are scheduling for
+                input(type='text', name='group', maxlength='500', required='')
+        p
+            label
+                | Name of Spiritual Advisor/Affiliate/CSDS Staff Contact
+                input(type='text', name='spiritualadvisorname', maxlength='500', required='')
+
+        p
+            label
+                | Days/times of desired regular meeting (must provide ranking of five in order of most desired to least desired) for example: 1) Mondays at 6 2) Mondays at 7... *
+        p
+            label
+                | Desired start time #1
+                input(type='datetime-local', name='time_one', required='')
+        p
+            label
+                | Desired start time #2
+                input(type='datetime-local', name='time_two', required='')
+        p
+            label
+                | Desired start time #3
+                input(type='datetime-local', name='time_three', required='')
+        p
+            label
+                | Desired start time #4
+                input(type='datetime-local', name='time_four', required='')
+        p
+            label
+                | Desired start time #5
+                input(type='datetime-local', name='time_five', required='')
+        p
+            label
+                | Amount of time needed {we cannot accommodate for longer than 2 hours for regular meetings (set-up, tear-down, and clean up time included)} *
+        p
+            label
+                | Duration in minutes
+                input(type='number', name='duration_minutes', required='' max=120)
+        p
+            label
+                | About how many people do you expect at regular meetings? * {Sacred Space- max 120 people, Reflection Room- max 25 people, Office Lounge- max 10 people}
+        p
+            label
+                | Maximum number of attendees expected
+                input(type='number', name='max_attendees', required='' min=1 max=120)
+        p
+            label
+                | What sort of activity/practice do you plan to engage in during regular meetings? For example: discussion, meditation, worship, etc. If you expect this to vary please describe the types of things you hope to do in the space during regular meetings.*
+        p
+            label
+                | Activity Description
+                textarea(name='activity_description', maxlength='1000', required='')
+        p
+            label
+                | Please use this space to give us any other pertinent information.
+        p
+            label
+                | Comments
+                textarea(name='comments', maxlength='1000')
+        p
+            button Create New Event Request

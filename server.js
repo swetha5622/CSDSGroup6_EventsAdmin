@@ -37,7 +37,8 @@ let dbConnSuccess = function() {
             .end();
         });
     
-    app.use('/csdsevents', csds_event);
+    //app.use('/csdsevents', csds_event);
+    app.use(nconf.get('base_route'), csds_event);
 
     const port = nconf.get('appPort');
 
@@ -56,7 +57,7 @@ let dev_db_url = `mongodb+srv://${user}:${pass}@${host}`;
 if (nconf.get('mongoDatabase')) {
     dev_db_url = `${dev_db_url}/${nconf.get('mongoDatabase')}?retryWrites=true`;
 }
-console.log(dev_db_url);
+// console.log(dev_db_url);
 
 mongoose.connect(dev_db_url, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
