@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const nconf = require('nconf');
 
-// Read in keys and secrets. Using nconf use can set secrets via
+// Read in keys and secrets. Using nconf we can set secrets via
 // environment variables, command-line arguments, or a keys.json file.
 nconf.argv().env().file('keys.json');
 
